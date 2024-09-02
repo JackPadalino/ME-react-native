@@ -15,7 +15,7 @@ const _layout = () => {
         // },
       }}
     >
-      <Tabs.Screen name="index" />
+      <Tabs.Screen name="home" />
       <Tabs.Screen name="auditory" />
       <Tabs.Screen name="live" />
     </Tabs>
