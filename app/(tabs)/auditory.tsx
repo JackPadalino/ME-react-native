@@ -13,7 +13,7 @@ const Auditory = () => {
 export default Auditory;
 const styles = StyleSheet.create({
   auditoryContainer: {
-    backgroundColor: Colors.bgColor,
+    // backgroundColor: Colors.bgColor,
     height: "100%",
   },
 });

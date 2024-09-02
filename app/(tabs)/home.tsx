@@ -13,7 +13,7 @@ const Home = () => {
 export default Home;
 const styles = StyleSheet.create({
   homeContainer: {
-    backgroundColor: Colors.bgColor,
+    // backgroundColor: Colors.bgColor,
     height: "100%",
   },
 });

@@ -12,4 +12,9 @@ const Artist = () => {
 };
 
 export default Artist;
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  auditoryContainer: {
+    // backgroundColor: Colors.bgColor,
+    height: "100%",
+  },
+});

@@ -15,7 +15,7 @@ const Live = () => {
 export default Live;
 const styles = StyleSheet.create({
   liveContainer: {
-    backgroundColor: Colors.bgColor,
+    // backgroundColor: Colors.bgColor,
     height: "100%",
   },
 });
