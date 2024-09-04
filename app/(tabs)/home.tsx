@@ -1,16 +1,22 @@
 import React, { useState, useRef } from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Button } from "react-native";
 import Colors from "@/constants/Colors";
 // import TrackSwiper from "@/components/trackSwiper";
 import Swiper from "react-native-swiper";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { setPlayingTrack } from "../store/tracksSlice";
 
 const Home = () => {
+  const dispatch = useAppDispatch();
   const { featuredTracks } = useAppSelector((state) => state.tracks);
   const activeIndex = useRef<number>(0);
+
   const handleSlideChange = (index: number) => {
     activeIndex.current = index;
-    // console.log(activeIndex.current);
+  };
+
+  const playTrack = () => {
+    dispatch(setPlayingTrack(featuredTracks[activeIndex.current]));
   };
 
   return (
@@ -19,10 +25,11 @@ const Home = () => {
         <Swiper
           showsButtons={false}
           showsPagination={false}
+          loop={false}
           onIndexChanged={(index) => handleSlideChange(index)}
         >
           {featuredTracks.map((track: any, index: number) => (
-            <View style={swiperStyles.slide}>
+            <View key={index} style={swiperStyles.slide}>
               <Image
                 source={{ uri: track.track_photo }}
                 style={swiperStyles.trackImg}
@@ -30,6 +37,7 @@ const Home = () => {
               <Text key={index} style={swiperStyles.text}>
                 {track.title}
               </Text>
+              <Button onPress={() => playTrack()} title="Play" color="white" />
             </View>
           ))}
         </Swiper>

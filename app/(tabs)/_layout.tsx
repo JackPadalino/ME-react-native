@@ -4,6 +4,7 @@ import { Tabs } from "expo-router";
 import Colors from "@/constants/Colors";
 import { FontAwesome, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+import TrackPlayer from "@/components/trackPlayer";
 
 const _layout = () => {
   const tabBarHeight = 100;
@@ -54,11 +55,10 @@ const _layout = () => {
         style={{
           position: "absolute",
           bottom: tabBarHeight,
-          backgroundColor: "red",
           width: "100%",
         }}
       >
-        <Text>This is a test</Text>
+        <TrackPlayer />
       </View>
     </>
   );
